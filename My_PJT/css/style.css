@@ -35,19 +35,11 @@ html {
   height: 850px;
 }
 
-.background__middle {
+.background__right {
   border-radius: 15px;
   background-color: #1FA8C8;
   width: 1000px;
   height: 850px;
-}
-
-.background__right {
-  border-radius: 10px;
-  background-color: #FFFFFF;
-  margin-left: 50px;
-  width: 350px;
-  height: 400px;
 }
 
 .background__dashed {
@@ -96,12 +88,12 @@ html {
 
 .leftbox {
   margin-top: 5px;
-  margin-left: 10px;
+  margin-left: 8px;
   width: 325px;
   height: 690px;
   border-radius: 15px;
   border: solid;
-  border-width: 3px;
+  border-width: 5px;
   border-color: black;
   display: flex;
   flex-flow: column wrap;
@@ -160,3 +152,93 @@ html {
   height: 760px;
 }
 
+.content__name {
+  width: 900px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.rightbox {
+  margin-top: 5px;
+  width: 915px;
+  height: 690px;
+  border-radius: 15px;
+  border: solid;
+  border-width: 5px;
+  border-color: black;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.rightbox__top {
+  margin-top: 40px;
+  width: 806px;
+  height: 150px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+.rightbox__top__news {
+  width: 380px;
+  height: 150px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.rightbox__top__bgm {
+  width: 380px;
+  height: 150px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.rightbox__miniroom {
+  margin-top: 20px;
+  width: 800px;
+  height: 300px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.rightbox__todolist {
+  margin-top: 20px;
+  width: 800px;
+  height: 120px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.background__aside {
+  border-radius: 10px;
+  margin-left: 75px;
+  width: 300px;
+  height: 300px;
+}
+
+.aside__title {
+  width: 300px;
+  height: 50px;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #676568;
+}
+
+.aside__content {
+  width: 300px;
+  height: 175px;
+  background-color: white;
+}
+
+.aside__music {
+  width: 300px;
+  height: 75px;
+  border-radius: 0px 0px 5px 5px ;
+  background-color: #E7E7E7;
+}
