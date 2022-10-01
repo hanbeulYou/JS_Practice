@@ -28,29 +28,29 @@ html {
   position: relative;
 }
 
-.left_box {
+.background__left {
   border-radius: 15px;
   background-color: #1FA8C8;
-  width: 450px;
+  width: 400px;
   height: 850px;
 }
 
-.middle_box {
+.background__middle {
   border-radius: 15px;
   background-color: #1FA8C8;
   width: 1000px;
   height: 850px;
 }
 
-.right_box {
+.background__right {
   border-radius: 10px;
   background-color: #FFFFFF;
   margin-left: 50px;
-  width: 300px;
+  width: 350px;
   height: 400px;
 }
 
-.dashed_box {
+.background__dashed {
   position: absolute;
   top: 60px;
   left: 60px;
@@ -59,11 +59,11 @@ html {
   border-color: white;
   border-radius: 10px;
   background-color: transparent;
-  width: 1371px;
+  width: 1321px;
   height: 780px;
 }
 
-.main_box {
+.background__board {
   position: absolute;
   top: 68px;
   left: 68px;
@@ -72,6 +72,91 @@ html {
   border-color: black;
   border-radius: 10px;
   background-color: #FFFFFF;
-  width: 1355px;
+  width: 1305px;
   height: 764px;
 }
+
+.board {
+  display: flex;
+  flex-direction: row;
+}
+
+.board__left {
+  width: 350px;
+  height: 760px;
+}
+
+.content__today {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 343px;
+  height: 50px;
+}
+
+.leftbox {
+  margin-top: 5px;
+  margin-left: 10px;
+  width: 325px;
+  height: 690px;
+  border-radius: 15px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+.leftbox__profile {
+  width: 319px;
+  height: 280px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+#profile {
+  width: 240px;
+  height: 240px;
+  border-radius: 15px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.leftbox__feeling {
+  width: 240px;
+  height: 30px;
+  border-radius: 5px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+  box-shadow: 3px 3px 3px 0px #8C8A82;
+}
+
+.leftbox__quote {
+  margin-top: 20px;
+  width: 240px;
+  height: 170px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.leftbox__family {
+  margin-top: 20px;
+  width: 240px;
+  height: 105px;
+  border: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.board__right {
+  margin-left: 20px;
+  width: 925px;
+  height: 760px;
+}
+
