@@ -8,6 +8,6 @@
 .vertical {
     display: flex;
     flex-flow: column wrap;
-    height: 100%;
+    height: fit-content;
     width: fit-content;
 }
