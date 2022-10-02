@@ -1,0 +1,13 @@
+.horizontal {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+    height: fit-content;
+}
+
+.vertical {
+    display: flex;
+    flex-flow: column wrap;
+    height: 100%;
+    width: fit-content;
+}
