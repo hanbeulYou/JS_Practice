@@ -117,7 +117,7 @@ html {
   border-color: black;
 }
 
-.leftbox__feeling {
+.leftbox__weather {
   display: flex;
   margin-top: 20px;
   width: 100%;
