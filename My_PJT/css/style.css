@@ -76,7 +76,7 @@ html {
 }
 
 .board__left {
-  width: 350px;
+  width: 340px;
   height: fit-content;
   padding: 8px;
 }
@@ -92,7 +92,7 @@ html {
 .leftbox {
   display: flex;
   align-items: center;
-  width: calc(340px - 60px);
+  width: calc(340px - 70px);
   border: 5px solid black;
   padding: 30px;
   border-radius: 15px;
@@ -100,8 +100,12 @@ html {
 
 .leftbox__profile {
   width: 100%;
-  height: 260px;
+  height: 250px;
   display: flex;
+  border: 3px solid black;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 20px;
 }
 
 #profile {
@@ -146,98 +150,144 @@ html {
 }
 
 .board__right {
-  margin-left: 20px;
-  width: 925px;
-  height: 760px;
+  width: 930px;
+  height: fit-content;
+  padding: 8px;
 }
 
 .content__name {
-  width: 900px;
-  height: 50px;
   display: flex;
+  margin-top: 30px;
+  height: fit-content;
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.rightbox {
-  margin-top: 5px;
-  width: 915px;
-  height: 690px;
-  border-radius: 15px;
-  border: solid;
-  border-width: 5px;
-  border-color: black;
+.content__name__title {
   display: flex;
-  flex-flow: column wrap;
+}
+
+.content__name__url {
+  display: flex;
+}
+
+.rightbox {
+  display: flex;
   align-items: center;
+  width: calc(930px - 150px);
+  border: 5px solid black;
+  padding: 30px 70px 30px 70px;
+  border-radius: 15px;
 }
 
 .rightbox__top {
-  margin-top: 40px;
-  width: 806px;
-  height: 150px;
   display: flex;
-  flex-flow: row wrap;
   justify-content: space-between;
+  height: 100px;
 }
 
 .rightbox__top__news {
-  width: 380px;
-  height: 150px;
-  border: solid;
-  border-width: 3px;
-  border-color: black;
+  width: 360px;
+  height: 100px;
+  border: 3px solid black;
 }
 
 .rightbox__top__bgm {
-  width: 380px;
-  height: 150px;
-  border: solid;
-  border-width: 3px;
-  border-color: black;
+  width: 360px;
+  height: 100px;
+  border: 3px solid black;
 }
 
 .rightbox__miniroom {
+  display: flex;
   margin-top: 20px;
-  width: 800px;
-  height: 300px;
-  border: solid;
-  border-width: 3px;
-  border-color: black;
+  width: 100%;
+  height: 387px;
+  border: 3px solid #E7E7E7;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.miniroom__feeling {
+  display: flex;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+  width: 100%;
+  height: 50%;
+}
+
+.miniroom__minimi {
+  display: flex;
+  margin-top: 10px;
+  width: 10%;
+  height: 50%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#feeling-form {
+  width: 320px;
+  height: 40px;
+  outline: none;
+  background-image: url('../img/input_feeling.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+#feeling-input {
+  width: 100%;
+  height: 80%;
+  border: 0px;
+  background-color: transparent;
+}
+
+input:focus {
+  outline: none;
+}
+
+input {
+  text-align: center;
 }
 
 .rightbox__todolist {
   margin-top: 20px;
-  width: 800px;
-  height: 120px;
-  border: solid;
-  border-width: 3px;
-  border-color: black;
+  width: 100%;
+  height: 100px;
+  border: 3px solid black;
 }
 
 .background__aside {
+  display: flex;
   border-radius: 10px;
   margin-left: 75px;
   width: 300px;
-  height: 300px;
 }
 
 .aside__title {
-  width: 300px;
+  width: 100%;
   height: 50px;
   border-radius: 5px 5px 0px 0px;
   background-color: #676568;
 }
 
 .aside__content {
-  width: 300px;
+  width: 100%;
   height: 175px;
   background-color: white;
 }
 
 .aside__music {
-  width: 300px;
+  width: 100%;
   height: 75px;
   border-radius: 0px 0px 5px 5px ;
   background-color: #E7E7E7;
+}
+
+.aside__todo {
+  width: 100%;
+  height: 175px;
+  background-color: white;
 }

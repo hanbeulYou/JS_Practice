@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/reset.css">
-  <title>SSyworld</title>
+  <title>SSYWORLD</title>
 </head>
 <body>
   <div class="task_bar"></div>
@@ -16,7 +16,7 @@
     <div class="background__right"></div>
     <div class="background__dashed"></div>
     <div class="background__board">
-      <div class="board">
+      <div class="horizontal">
         <!--여기부터 차노리와 함께하는 페어프로그래밍-->
         <div class="vertical board__left">
           <div class="content__today">
@@ -25,7 +25,6 @@
           <div class="content__leftbox">
             <div class="leftbox vertical">
               <div class="leftbox__profile">
-                <div id="profile"></div>
               </div>
               <div class="leftbox__feeling">
               </div>
@@ -34,46 +33,54 @@
             </div>
           </div>
         </div>
-        <!-- <div class="board__right">
-          <div class="right__content">
-            <div class="content__name">
-              <div class="content__name__title">
-                <h5>yourID 님의 미니홈피</h5>
-              </div>
-              <div class="content__name__url">
-                <h5>https://ssyworld.com/yourID</h5>
-              </div>
+        <!--my coding-->
+        <div class="vertical board__right">
+          <div class="content__name horizontal">
+            <div class="content__name__title">
+              <h5>yourID 님의 미니홈피</h5>
             </div>
-            <div class="content__rightbox">
-              <div class="rightbox">
-                <div class="rightbox__top">
-                  <div class="rightbox__top__news">
-                    <h5>NEWS</h5>
-                  </div>
-                  <div class="rightbox__top__bgm">
-                    <h5>BGM</h5>
-                  </div>
-                </div>
-                <div class="rightbox__miniroom">
-                  <h5>MINI ROOM</h5>
-                </div>
-                <div class="rightbox__todolist">
-                  <h5>TO DO</h5></div>
-              </div>
+            <div class="content__name__url">
+              <h5>https://ssyworld.com/yourID</h5>
             </div>
           </div>
-        </div>-->
+          <div class="content__rightbox">
+            <div class="rightbox vertical">
+              <div class="rightbox__top horizontal">
+                <div class="rightbox__top__news">
+                  <h5>NEWS</h5>
+                </div>
+                <div class="rightbox__top__bgm">
+                  <h5>BGM</h5>
+                </div>
+              </div>
+              <div class="rightbox__miniroom">
+                <div class="miniroom__feeling vertical">
+                  <div class="miniroom__input">
+                    <form id="feeling-form">
+                        <input id="feeling-input" type="text" placeholder="지금 기분 어때요?" required>
+                    </form>
+                  </div>
+                  <div class="miniroom__minimi"></div>
+                </div>
+              </div>
+              <div class="rightbox__todolist">
+                <h5>TO DO</h5></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- <div class="background__aside">
+    <div class="background__aside vertical">
       <div class="aside">
         <div class="aside__title"></div>
         <div class="aside__content"></div>
         <div class="aside__music"></div>
         <div class="aside__login"></div>
       </div>
-    </div> -->
+    </div>
   </div>
   <script src="js/background.js"></script>
+  <script src="js/miniroom.js"></script>
+  <script src="js/api_keys.js"></script>
 </body>
 </html>

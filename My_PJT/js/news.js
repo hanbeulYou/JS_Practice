@@ -1,0 +1,1 @@
+const NEWS_API = globalVarible.NEWS_API;
