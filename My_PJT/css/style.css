@@ -149,6 +149,7 @@ html {
   padding: 10px;
   width: calc(100%-20px);
   height: 170px;
+  line-height: 1.5;
 }
 
 .leftbox__family {
@@ -204,10 +205,26 @@ html {
   padding: 10px;
 }
 
+.news__content {
+  border-top: 1px solid black;
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 10px;
+}
+
 .rightbox__top__bgm {
   width: 360px;
   height: 100px;
   padding: 10px;
+}
+
+.bgm__content {
+  border-top: 1px solid black;
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin-top: 10px;
+  font-size: 10px;
 }
 
 .rightbox__miniroom {
@@ -240,17 +257,18 @@ html {
 }
 
 #feeling-form {
+  display: flex;
   width: 320px;
   height: 40px;
   outline: none;
   background-image: url('../img/input_feeling.png');
   background-repeat: no-repeat;
   background-size: 100%;
-
+  justify-content: center;
 }
 
 #feeling-input {
-  width: 100%;
+  width: 90%;
   height: 80%;
   border: 0px;
   background-color: transparent;
@@ -264,7 +282,7 @@ input {
   text-align: center;
 }
 
-.rightbox__todolist {
+.rightbox__comments {
   margin-top: 20px;
   width: 100%;
   height: 100px;

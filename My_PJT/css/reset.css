@@ -31,8 +31,11 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+ol {
 	list-style: none;
+}
+li {
+	margin: 5px 0px;
 }
 blockquote, q {
 	quotes: none;
