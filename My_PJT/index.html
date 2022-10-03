@@ -70,8 +70,15 @@
                   <div class="miniroom__minimi"></div>
                 </div>
               </div>
-              <div class="rightbox__comments">
-                <h5>TO DO</h5></div>
+              <div class="rightbox__comments vertical">
+                <div class="comment__input horizontal">
+                  <h5>😉 WHAT'S FRIENDS SAY : </h5>
+                  <form id="comment-form">
+                    <input type="text" id="form-input" required>
+                  </form>
+                </div>
+                <ul id="comments__list"></ul>
+              </div>
             </div>
           </div>
         </div>
@@ -79,9 +86,15 @@
     </div>
     <div class="background__aside vertical">
       <div class="aside">
-        <div class="aside__title"></div>
-        <div class="aside__content"></div>
-        <div class="aside__music"></div>
+        <div class="aside__title">
+          <h5 style="color:white">😀 미니미에게 기분을 알려주세요</h5>
+        </div>
+        <div class="aside__content">
+          <ul id="feelings__list"></ul>
+        </div>
+        <div class="aside__music">
+          <div id="player"></div>
+        </div>
         <div class="aside__login"></div>
       </div>
     </div>
@@ -93,5 +106,7 @@
   <script src="js/quotes.js"></script>
   <script src="js/news.js"></script>
   <script src="js/comments.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/feeling.js"></script>
 </body>
 </html>

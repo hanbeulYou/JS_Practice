@@ -49,3 +49,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+button {
+	cursor: pointer;
+	margin: 0;
+	border: none;
+	background-color: transparent;
+}
