@@ -10,12 +10,46 @@ html {
   visibility: hidden;
 }
 
-.login__page {
+.modal {
   position: absolute;
-  width: 1920px;
-  height: 1000px;
+  top: 0;
+  left: 0;
+
+  width: calc(1920px - 780px);
+  height: calc(1000px - 780px);
+  padding: 390px;
+
+  z-index: 1;
   background-image: url('../img/login.png');
+  background-repeat: no-repeat;
   background-size: 100%;
+}
+
+.modal__login {
+  width: 100%;
+  height: 50px;
+  background-color: transparent;
+  justify-content: center;
+  align-items: center;
+}
+
+#login__id {
+  margin-top: 7px;
+  width: 270px;
+  height: 43px;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+}
+
+#login__submit {
+  margin-top: 28px;
+  width: 270px;
+  height: 43px;
+  border-radius: 20px;
+  border: none;
+  color: white;
+  background-color: #303030;
 }
 
 select {
@@ -388,10 +422,17 @@ input {
   background-color: #E7E7E7;
 }
 
-.aside__login {
-  width: 100%;
-  height: 50px;
-  background-color: transparent;
-  justify-content: center;
-  align-items: center;
+.fadeOut {
+  animation-name: fade_out;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+}
+
+@keyframes fade_out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }

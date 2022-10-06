@@ -3,6 +3,8 @@ const NEWS_API = globalVariable.NEWS_API;
 var newsURL = 'https://newsapi.org/v2/top-headlines?' + 'country=kr&' + `apiKey=${NEWS_API}`;
 var req = new Request(newsURL);
 
+console.log(newsURL)
+
 fetch(req)
     .then(response => response.json())
     .then(data => {

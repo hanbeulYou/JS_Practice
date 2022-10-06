@@ -10,6 +10,14 @@
   <title>SSYWORLD</title>
 </head>
 <body>
+  <div class="modal hidden">
+    <div class="modal__login horizontal">
+      <form id="login-form" class="hidden">
+        <div><input id="login__id" required maxlength="15" type="text" placeholder="아이디"></div>
+        <div><input id="login__submit" type="submit" value="로그인"></div>
+      </form>
+    </div>
+  </div>
   <div id="background">
     <div class="background__left"></div>
     <div class="background__right"></div>
@@ -105,13 +113,12 @@
         </div>
         <div class="aside__music">
           <div id="player"></div>
-        </div>
-        <div class="aside__login horizontal">
-          <form id="login-form" class="hidden">
-            <input required maxlength="15" type="text" placeholder="What is your name?">
-            <input type="submit" value="Log in">
-          </form>
-          <h1 id="greeting" class="hidden"></h1>
+          <div class="player__buttons">
+            <div class="player__buttons__before"></div>
+            <div class="player__buttons__pause"></div>
+            <div class="player__buttons__stop"></div>
+            <div class="player__buttons__next"></div>
+          </div>
         </div>
       </div>
     </div>
