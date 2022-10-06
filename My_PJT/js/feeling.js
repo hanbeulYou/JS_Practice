@@ -82,7 +82,6 @@ feelingForm.addEventListener("submit", feelingSubmit);
 
 const savedFeelings = localStorage.getItem(FEELING_KEY);
 
-// 얘를 그냥 거기에 넣어버릴까 save에
 if(savedFeelings !== null){
     const parsedFeelings = JSON.parse(savedFeelings);
     feelings = parsedFeelings;

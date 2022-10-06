@@ -19,7 +19,7 @@
         <!--여기부터 차노리와 함께하는 페어프로그래밍-->
         <div class="vertical board__left">
           <div class="content__today">
-            <h6>Today | Total</h6>
+            <h6 id="today">Today | Total</h6>
           </div>
           <div class="content__leftbox">
             <div class="leftbox vertical">
@@ -34,7 +34,18 @@
               <div class="leftbox__quote">
                 <span></span>
               </div>
-              <div class="leftbox__family"></div>
+              <div class="leftbox__family vertical">
+                <div class="family__top"><h6>💑 일촌</h6></div>
+                <div class="family__bottom">
+                  <select onchange="if(this.value) window.open(this.value);">
+                    <option value="" disabled selected>파도타기</option>
+                    <option value="https://github.com/hanbeulYou">hanbeulYou</option>
+                    <option value="https://github.com/yjp8842">yjp8842</option>
+                    <option value="https://github.com/SangwhaLee">SangwhaLee</option>
+                    <option value="https://github.com/angielxx">angielxx</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -42,10 +53,10 @@
         <div class="vertical board__right">
           <div class="content__name horizontal">
             <div class="content__name__title">
-              <h5>yourID 님의 미니홈피</h5>
+              <h5 id="my__home" class="dontshow">title</h5>
             </div>
             <div class="content__name__url">
-              <h5>https://ssyworld.com/yourID</h5>
+              <h5 id="my__url" class="dontshow">url</h5>
             </div>
           </div>
           <div class="content__rightbox">
@@ -95,7 +106,13 @@
         <div class="aside__music">
           <div id="player"></div>
         </div>
-        <div class="aside__login"></div>
+        <div class="aside__login horizontal">
+          <form id="login-form" class="hidden">
+            <input required maxlength="15" type="text" placeholder="What is your name?">
+            <input type="submit" value="Log in">
+          </form>
+          <h1 id="greeting" class="hidden"></h1>
+        </div>
       </div>
     </div>
   </div>
@@ -108,5 +125,7 @@
   <script src="js/comments.js"></script>
   <script src="js/player.js"></script>
   <script src="js/feeling.js"></script>
+  <script src="js/greeting.js"></script>
+  <script src="js/today.js"></script>
 </body>
 </html>

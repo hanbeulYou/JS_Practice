@@ -50,8 +50,8 @@ const randomMusic = musicID[Math.floor(Math.random()*musicID.length)]
 var player;
 function onYouTubeIframeAPIReady() {
     player = new YT.Player('player', {
-        height: '000',
-        width: '000',
+        height: '200',
+        width: '400',
         videoId: randomMusic.id,
         events: {
             'onReady': onPlayerReady,
@@ -67,7 +67,7 @@ function onPlayerReady(event) {
 var done = false;
 function onPlayerStateChange(event) {
     if (event.data == YT.PlayerState.PLAYING && !done) {
-        setTimeout(stopVideo, 300000);
+        setTimeout(stopVideo, 000000);
         done = true;
     }
 }
