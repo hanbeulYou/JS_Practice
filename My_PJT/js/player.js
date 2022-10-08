@@ -93,14 +93,15 @@ var pause = false;
 function handlePauseBtnClick() {
     console.log("PAUSE Button")
     title.innerText = `${musicID[nowPlaying].title} - ${musicID[nowPlaying].musician}`;
+    // flowText(title);
     if(pause === false) {
         player.playVideo();
         pause = true;
-        pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="play">';
+        pauseButton.innerHTML = '<img src="./img/player/pauseBTN.png" alt="play" style="width:100%; height:100%;">';
     } else {
         player.pauseVideo();
         pause = false;
-        pauseButton.innerHTML = '<img src="./img/player/pauseBTN.png" alt="pause">';
+        pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="pause" style="width:100%; height:100%;">';
     }
 }
 
@@ -113,6 +114,7 @@ function handleNextBtnClick() {
         nowPlaying++;
     }
     title.innerText = `${musicID[nowPlaying].title} - ${musicID[nowPlaying].musician}`;
+    // flowText(title);
     player.loadVideoById(musicID[nowPlaying].id)
 }
 
@@ -124,16 +126,34 @@ function handleBeforeBtnClick() {
         nowPlaying--;
     }
     title.innerText = `${musicID[nowPlaying].title} - ${musicID[nowPlaying].musician}`;
+    // flowText(title);
     player.loadVideoById(musicID[nowPlaying].id)
 }
 
 function handleStopBtnClick() {
     pause = false;
-    pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="play">';
+    pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="play" style="width:100%; height:100%;">';
     title.innerText = '';
     console.log("STOP Button");
     player.stopVideo();
 }
+
+// function flowText(element) {
+//     let elementWidth = element.offsetWidth;
+//     let parentWidth = element.parentElement.offsetWidth;
+//     let flag = 0;
+
+//     console.log(elementWidth);
+//     console.log(parentWidth);
+
+//     setInterval(() => {
+//         element.style.marginLeft = --flag + "px";
+//         if(elementWidth == -flag) {
+//             flag = parentWidth;
+//         }
+//     }, 10);
+//     // 10ms 마다 반복
+// }
 
 const beforeButton = document.querySelector("#before");
 const pauseButton = document.querySelector("#pause");
