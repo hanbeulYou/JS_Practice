@@ -3,21 +3,6 @@ tag.src = 'https://www.youtube.com/iframe_api';
 var firstScriptTag = document.getElementsByTagName('script')[0];
 firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
-var player;
-function onYouTubeIframeAPIReady() {
-    player = new YT.Player('player', {
-        height: '200',
-        width: '400',
-        videoId: musicID[0].id,
-        events: {
-            'onReady': function(event){
-                event.target.playVideo();
-            },
-            'onStateChange': onPlayerStateChange
-        },
-    });
-}
-
 let musicID = [
     {
         title: '밤하늘의 별을...',
@@ -80,11 +65,22 @@ let musicID = [
 function shuffleList(array) {
     array.sort(() => Math.random() - 0.5);
 }
-
 // 셔플된 음악리스트
 // const randomMusic = musicID[Math.floor(Math.random()*musicID.length)]
 shuffleList(musicID);
 const title = document.querySelector(".player__title")
+
+var player;
+function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+        height: '200',
+        width: '400',
+        videoId: musicID[0].id,
+        events: {
+            'onStateChange': onPlayerStateChange
+        },
+    });
+}
 
 function onPlayerStateChange(event) {
     if(event.data == YT.PlayerState.ENDED) {
@@ -100,11 +96,11 @@ function handlePauseBtnClick() {
     if(pause === false) {
         player.playVideo();
         pause = true;
-        pauseButton.innerText = '⏸';
+        pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="play">';
     } else {
         player.pauseVideo();
         pause = false;
-        pauseButton.innerText = '▶';
+        pauseButton.innerHTML = '<img src="./img/player/pauseBTN.png" alt="pause">';
     }
 }
 
@@ -132,17 +128,19 @@ function handleBeforeBtnClick() {
 }
 
 function handleStopBtnClick() {
+    pause = false;
+    pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="play">';
     title.innerText = '';
-    console.log("STOP Button")
+    console.log("STOP Button");
     player.stopVideo();
 }
 
-const beforeButton = document.querySelector("#before")
-const pauseButton = document.querySelector("#pause")
-const stopButton = document.querySelector("#stop")
-const nextButton = document.querySelector("#next")
+const beforeButton = document.querySelector("#before");
+const pauseButton = document.querySelector("#pause");
+const stopButton = document.querySelector("#stop");
+const nextButton = document.querySelector("#next");
 
-beforeButton.addEventListener("click", handleBeforeBtnClick)
-pauseButton.addEventListener("click", handlePauseBtnClick)
-stopButton.addEventListener("click", handleStopBtnClick)
-nextButton.addEventListener("click", handleNextBtnClick)
+beforeButton.addEventListener("click", handleBeforeBtnClick);
+pauseButton.addEventListener("click", handlePauseBtnClick);
+stopButton.addEventListener("click", handleStopBtnClick);
+nextButton.addEventListener("click", handleNextBtnClick);

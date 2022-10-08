@@ -5,7 +5,12 @@ function getClock(){
     // new Date()로 현재 시간 가져오기
     const date = new Date();
     randomToday += Math.floor(date.getSeconds()*Math.random());
-    today.innerText = `🧡 Today : ${randomToday} 🧡`;
+    today.innerText = `🧡 Today : ${priceToString(randomToday)} 🧡`;
+}
+
+// 3자리씩 ',' 넣기
+function priceToString(price) {
+    return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
 
 getClock()

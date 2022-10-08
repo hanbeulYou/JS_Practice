@@ -5,6 +5,7 @@ const feelingList = document.getElementById("feelings__list");
 const FEELING_KEY = 'feeling';
 
 let feelings = [];
+let feelingIdx;
 
 function saveFeelings(){
     localStorage.setItem(FEELING_KEY, JSON.stringify(feelings));
@@ -12,19 +13,24 @@ function saveFeelings(){
 
 function downFeeling(event){
     const li = event.target.parentElement;
-    feelings = feelings.filter(item => item.id == li.id);
-    if(feelings[0].value > 0){
-        feelings[0].value -= 10;
+    feelingIdx = feelings.findIndex(item => item.id == li.id);
+    if(feelings[feelingIdx].value > 0){
+        feelings[feelingIdx].value -= 10;
     }
+    const feelingValue = li.querySelector('progress');
+    feelingValue.value = feelings[feelingIdx].value;
     saveFeelings();
 }
 
 function upFeeling(event){
     const li = event.target.parentElement;
-    feelings = feelings.filter(item => item.id == li.id);
-    if(feelings[0].value < 100){
-        feelings[0].value += 10;
+    feelingIdx = feelings.findIndex(item => item.id == li.id);
+    console.log(li);
+    if(feelings[feelingIdx].value < 100){
+        feelings[feelingIdx].value += 10;
     }
+    const feelingValue = li.querySelector('progress');
+    feelingValue.value = feelings[feelingIdx].value;
     saveFeelings();
 }
 

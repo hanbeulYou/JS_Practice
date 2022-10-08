@@ -7,9 +7,16 @@
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/reset.css">
+  <!--Font 추가-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
+  <!--font-family: 'Single Day', cursive;-->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <!--font-family: 'Noto Sans KR', sans-serif;-->
   <title>SSYWORLD</title>
 </head>
-<body>
+<body style="font-family: 'Noto Sans KR', sans-serif;">
   <div class="modal hidden">
     <div class="modal__login horizontal">
       <form id="login-form" class="hidden">
@@ -40,7 +47,7 @@
                 <div class="weather__now"></div>
               </div>
               <div class="leftbox__quote">
-                <span></span>
+                <span style="font-family: 'Single Day', cursive;"></span>
               </div>
               <div class="leftbox__family vertical">
                 <div class="family__top"><h6>💑 일촌</h6></div>
@@ -51,6 +58,7 @@
                     <option value="https://github.com/yjp8842">yjp8842</option>
                     <option value="https://github.com/SangwhaLee">SangwhaLee</option>
                     <option value="https://github.com/angielxx">angielxx</option>
+                    <option value="https://github.com/bohodays">bohodays</option>
                   </select>
                 </div>
               </div>
@@ -83,7 +91,7 @@
                 <div class="miniroom__feeling vertical">
                   <div class="miniroom__input">
                     <form id="feeling-form">
-                        <input id="feeling-input" type="text" placeholder="지금 기분 어때요?" required>
+                        <input id="feeling-input" type="text" placeholder="지금 기분 어때요?" maxlength='6' required autocomplete="off">
                     </form>
                   </div>
                   <div class="miniroom__minimi"></div>
@@ -115,14 +123,10 @@
           <div id="player" style="display: none;"></div>
           <div class="player__title"></div>
           <div class="player__buttons">
-            <button id="before">⏪</button>
-            <button id="pause">▶</button>
-            <button id="stop">⏹</button>
-            <button id="next">⏩</button>
-            <!-- <div class="player__buttons__before"></div>
-            <div class="player__buttons__pause"></div>
-            <div class="player__buttons__stop"></div>
-            <div class="player__buttons__next"></div> -->
+            <button id="before"><img id="buttons" src="./img/player/prevBTN.png" alt="prev"></button>
+            <button id="pause"><img id="buttons" src="./img/player/playBTN.png" alt="play"></button>
+            <button id="stop"><img id="buttons" src="./img/player/stopBTN.png" alt="stop"></button>
+            <button id="next"><img id="buttons" src="./img/player/nextBTN.png" alt="next"></button>
           </div>
         </div>
       </div>
