@@ -50,14 +50,19 @@ let musicID = [
         id: 'RNqXM7T7f_A'
     },
     {
-        title: '비밀번호 486',
-        musician: '윤하',
-        id: 'RNqXM7T7f_A',
-    },
-    {
         title: '가시',
         musician: '버즈',
         id: 'AoVt7Qe9t1s',
+    },
+    {
+        title: '미친 사랑의 노래',
+        musician: '씨야',
+        id: '_MythyZ0w3s',
+    },
+    {
+        title: '술 한잔 해요',
+        musician: '지아',
+        id: 'j2t_VmzuZSc',
     },
 ]
 
@@ -77,7 +82,8 @@ function onYouTubeIframeAPIReady() {
         width: '400',
         videoId: musicID[0].id,
         events: {
-            'onStateChange': onPlayerStateChange
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange,
         },
     });
 }
@@ -138,23 +144,6 @@ function handleStopBtnClick() {
     player.stopVideo();
 }
 
-// function flowText(element) {
-//     let elementWidth = element.offsetWidth;
-//     let parentWidth = element.parentElement.offsetWidth;
-//     let flag = 0;
-
-//     console.log(elementWidth);
-//     console.log(parentWidth);
-
-//     setInterval(() => {
-//         element.style.marginLeft = --flag + "px";
-//         if(elementWidth == -flag) {
-//             flag = parentWidth;
-//         }
-//     }, 10);
-//     // 10ms 마다 반복
-// }
-
 const beforeButton = document.querySelector("#before");
 const pauseButton = document.querySelector("#pause");
 const stopButton = document.querySelector("#stop");
@@ -164,3 +153,30 @@ beforeButton.addEventListener("click", handleBeforeBtnClick);
 pauseButton.addEventListener("click", handlePauseBtnClick);
 stopButton.addEventListener("click", handleStopBtnClick);
 nextButton.addEventListener("click", handleNextBtnClick);
+
+const volumeSlider = document.getElementById("volumeRange");
+volumeSlider.addEventListener("input", handleSliderInput)
+
+function onPlayerReady(event){
+    player.setVolume(50);
+}
+
+function handleSliderInput() {
+    player.setVolume(volumeSlider.value);
+    console.log(player.getVolume())
+}
+
+function postBGM(nowMusic) {
+    // console.log(nowMusic);
+    const musicList = document.createElement("li");
+    const musicSpan = document.createElement("span");
+    musicList.appendChild(musicSpan);
+    musicSpan.innerText = nowMusic.title;
+    musicList.style.width = "105px";
+    musicList.style.margin = "3px";
+    bgmContent.appendChild(musicList);
+    
+}
+
+const bgmContent = document.querySelector(".bgm__content");
+musicID.forEach(postBGM);

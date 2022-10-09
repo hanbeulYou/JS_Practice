@@ -304,11 +304,13 @@ select option[value=""][disabled] {
 }
 
 .bgm__content {
+  display: flex;
   border-top: 1px solid black;
   width: calc(100% - 20px);
   padding: 5px;
   margin-top: 10px;
   font-size: 10px;
+  flex-flow: row wrap;
 }
 
 .rightbox__miniroom {
@@ -442,7 +444,7 @@ input {
 
 .player__container {
   display: flex;
-  width: 80%;
+  width: 85%;
   flex-direction: row;
   border: 3px solid #676568;
   border-radius: 20px;
