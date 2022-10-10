@@ -35,9 +35,9 @@ let musicID = [
         id: '-sVo6NWwK_o',
     },
     {
-        title: '17171771',
-        musician: '자우림',
-        id: 'j_zEg4pifDU',
+        title: '거리에서',
+        musician: '성시경',
+        id: 'RUd6LLIr-Wg',
     },
     {
         title: '기다리다',
@@ -88,6 +88,7 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
+// 노래가 끝나면 다음곡 자동 재생
 function onPlayerStateChange(event) {
     if(event.data == YT.PlayerState.ENDED) {
         handleNextBtnClick();
@@ -95,22 +96,31 @@ function onPlayerStateChange(event) {
     }
 }
 
-var pause = false;
+// 재생/일시정지 버튼
+function pauseToPlay() {
+    player.playVideo();
+    pause = false;
+    pauseButton.innerHTML = '<img src="./img/player/pauseBTN.png" alt="play" style="width:100%; height:100%;">';
+}
+
+function playToPause() {
+    player.pauseVideo();
+    pause = true;
+    pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="pause" style="width:100%; height:100%;">';
+}
+
+var pause = true;
 function handlePauseBtnClick() {
     console.log("PAUSE Button")
     title.innerText = `${musicID[nowPlaying].title} - ${musicID[nowPlaying].musician}`;
-    // flowText(title);
-    if(pause === false) {
-        player.playVideo();
-        pause = true;
-        pauseButton.innerHTML = '<img src="./img/player/pauseBTN.png" alt="play" style="width:100%; height:100%;">';
+    if(pause === true) {
+        pauseToPlay();
     } else {
-        player.pauseVideo();
-        pause = false;
-        pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="pause" style="width:100%; height:100%;">';
+        playToPause();
     }
 }
 
+// 이전/다음 버튼
 let nowPlaying = 0;
 function handleNextBtnClick() {
     console.log("NEXT Button");
@@ -119,8 +129,10 @@ function handleNextBtnClick() {
     } else {
         nowPlaying++;
     }
+    if(pause === true) {
+        pauseToPlay();
+    }
     title.innerText = `${musicID[nowPlaying].title} - ${musicID[nowPlaying].musician}`;
-    // flowText(title);
     player.loadVideoById(musicID[nowPlaying].id)
 }
 
@@ -131,14 +143,16 @@ function handleBeforeBtnClick() {
     } else {
         nowPlaying--;
     }
+    if(pause === true) {
+        pauseToPlay();
+    }
     title.innerText = `${musicID[nowPlaying].title} - ${musicID[nowPlaying].musician}`;
-    // flowText(title);
     player.loadVideoById(musicID[nowPlaying].id)
 }
 
+// 중지 버튼
 function handleStopBtnClick() {
-    pause = false;
-    pauseButton.innerHTML = '<img src="./img/player/playBTN.png" alt="play" style="width:100%; height:100%;">';
+    playToPause()
     title.innerText = '';
     console.log("STOP Button");
     player.stopVideo();
@@ -154,8 +168,9 @@ pauseButton.addEventListener("click", handlePauseBtnClick);
 stopButton.addEventListener("click", handleStopBtnClick);
 nextButton.addEventListener("click", handleNextBtnClick);
 
+// 볼륨 조절 slider
 const volumeSlider = document.getElementById("volumeRange");
-volumeSlider.addEventListener("input", handleSliderInput)
+volumeSlider.addEventListener("input", handleSliderInput);
 
 function onPlayerReady(event){
     player.setVolume(50);
@@ -166,6 +181,10 @@ function handleSliderInput() {
     console.log(player.getVolume())
 }
 
+// 본문 우측 상단에 bgm list 띄워주기
+const bgmContent = document.querySelector(".bgm__content");
+musicID.forEach(postBGM);
+
 function postBGM(nowMusic) {
     // console.log(nowMusic);
     const musicList = document.createElement("li");
@@ -175,8 +194,20 @@ function postBGM(nowMusic) {
     musicList.style.width = "105px";
     musicList.style.margin = "3px";
     bgmContent.appendChild(musicList);
-    
+    musicSpan.style.cursor = "pointer";
+    musicSpan.addEventListener("click", handleTitleClick);
 }
 
-const bgmContent = document.querySelector(".bgm__content");
-musicID.forEach(postBGM);
+// bgm list에서 title 클릭시 해당 곡 재생
+function handleTitleClick(event){
+    const findMusicIdx = musicID.findIndex((item) => item.title === event.target.parentElement.innerText);
+    console.log(event.target.parentElement.innerText);
+    console.log(findMusicIdx);
+
+    nowPlaying = findMusicIdx;
+    if(pause === true) {
+        pauseToPlay();
+    }
+    title.innerText = `${musicID[nowPlaying].title} - ${musicID[nowPlaying].musician}`;
+    player.loadVideoById(musicID[nowPlaying].id)
+}
